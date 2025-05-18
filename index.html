@@ -1,95 +1,90 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Magazine Luiza - Boneca Bebê Reborn</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magazine Luiza - Boneca Reborn</title>
   <style>
     body {
       margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background: #f5f5f5;
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
     }
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    header {
       background-color: #0074c1;
-      padding: 10px 20px;
-      color: #fff;
+      color: white;
+      padding: 10px 15px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
     .logo img {
-      height: 40px;
+      height: 30px;
     }
-    .search-input {
-      width: 40%;
+    .search-bar input {
+      width: 100%;
+      max-width: 300px;
       padding: 8px;
       border-radius: 4px;
       border: none;
     }
-    .icons span {
-      margin-left: 15px;
-      cursor: pointer;
-    }
     .main {
       display: flex;
+      padding: 15px;
       max-width: 1200px;
       margin: auto;
-      padding: 20px;
     }
     .filters {
       width: 200px;
-      background: #fff;
+      background-color: #fff;
       padding: 15px;
-      margin-right: 20px;
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
     .products {
       flex: 1;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 15px;
+      padding-left: 15px;
     }
     .card {
-      background: #fff;
-      padding: 10px;
+      background-color: #fff;
       border-radius: 8px;
+      padding: 10px;
       text-align: center;
       box-shadow: 0 0 5px rgba(0,0,0,0.05);
     }
     .card img {
       width: 100%;
       height: 180px;
-      object-fit: cover;
-      border-radius: 6px;
+      object-fit: contain;
+      margin-bottom: 10px;
     }
-    .card-title {
+    .title {
       font-size: 14px;
-      margin: 10px 0;
+      margin-bottom: 6px;
     }
-    .card-price {
-      color: #d40000;
-      font-size: 16px;
+    .price {
       font-weight: bold;
+      font-size: 16px;
+      color: #d40000;
     }
   </style>
 </head>
 <body>
 
-  <header class="header">
+  <header>
     <div class="logo">
-      <img src="https://www.magazineluiza.com.br/assets/core/header/img/logo-magalu.svg" alt="Magazine Luiza">
+      <img src="https://www.magazineluiza.com.br/assets/core/header/img/logo-magalu.svg" alt="Magalu">
     </div>
-    <input type="text" placeholder="Buscar produto..." class="search-input" />
-    <div class="icons">
-      <span>Login</span>
-      <span>🛒</span>
+    <div class="search-bar">
+      <input type="text" placeholder="boneca bebe reborn silicone">
     </div>
+    <div class="icons">🛒</div>
   </header>
 
-  <main class="main">
+  <div class="main">
     <aside class="filters">
       <h3>Filtrar por</h3>
       <label><input type="checkbox" class="filter" value="199"> Até R$199</label><br/>
@@ -98,31 +93,31 @@
     </aside>
 
     <section class="products" id="product-list">
-      <!-- Produtos inseridos via JS -->
+      <!-- Os produtos serão carregados via JavaScript -->
     </section>
-  </main>
+  </div>
 
   <script>
     const produtos = [
       {
-        nome: "Boneca Bebê Reborn Realista com Roupinhas",
+        nome: "Bebê Reborn Boneca Silicone Pode Dar Banho",
+        preco: 204.25,
+        imagem: "https://i.imgur.com/0rHTFzR.jpg"
+      },
+      {
+        nome: "Bebê Reborn Gêmeos Casal Silicone",
+        preco: 207.59,
+        imagem: "https://i.imgur.com/wqJSbSP.jpg"
+      },
+      {
+        nome: "Boneca Reborn com Roupinha Rosa",
         preco: 189.90,
-        imagem: "https://a-static.mlcdn.com.br/800x560/boneca-bebe-reborn-realista-com-roupinhas/lojadosbonecosoficial/665e5ef7de5a11ecb4ad4201ac18504e/f19700e7502ed147b1466cd2f8a6e32e.jpeg"
+        imagem: "https://i.imgur.com/ZjLOHAG.jpg"
       },
       {
-        nome: "Boneca Reborn com Certidão e Mamadeira",
+        nome: "Boneca Reborn com Bolsa e Mamadeira",
         preco: 229.90,
-        imagem: "https://a-static.mlcdn.com.br/800x560/boneca-reborn-com-acessorios-certidao-e-mamadeira/lojadosbonecosoficial/2e4d2e50f2b611ecb6a04201ac18504e/f37c2796c4e9dd367f6e973eeac29d9b.jpeg"
-      },
-      {
-        nome: "Boneca Silicone Premium Reborn",
-        preco: 279.90,
-        imagem: "https://a-static.mlcdn.com.br/800x560/boneca-bebe-reborn-silicone-vinil-realista-com-acessorios/lojadosbonecosoficial/23f90ff7f2b511ecb6a04201ac18504e/52936224f4fa9d73d7e70808c4571d65.jpeg"
-      },
-      {
-        nome: "Boneca Bebê Reborn com Bolsa",
-        preco: 199.90,
-        imagem: "https://a-static.mlcdn.com.br/800x560/boneca-reborn-realista-bebe-silicone-com-bolsa/lojadosbonecosoficial/63d9c10ef2b511ecb6a04201ac18504e/7294c2f99dc419fc8f632efcc5f7644c.jpeg"
+        imagem: "https://i.imgur.com/b9rYq63.jpg"
       }
     ];
 
@@ -134,8 +129,8 @@
         container.innerHTML += `
           <div class="card">
             <img src="${p.imagem}" alt="${p.nome}">
-            <div class="card-title">${p.nome}</div>
-            <div class="card-price">R$ ${p.preco.toFixed(2)}</div>
+            <div class="title">${p.nome}</div>
+            <div class="price">R$ ${p.preco.toFixed(2)}</div>
           </div>
         `;
       });
